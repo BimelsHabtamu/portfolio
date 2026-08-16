@@ -19,6 +19,8 @@ const translations = {
 
     viewWork: "View My Work",
     downloadResume: "Download Resume",
+    viewResume: "View Resume",
+    resumeModalTitle: "Resume — Bimels Habtamu",
 
     github: "GitHub",
     linkedin: "LinkedIn",
@@ -72,8 +74,22 @@ const translations = {
 
     contactLabel: "Contact",
     contactTitle: "Let's build something great.",
+    contactDescription:
+      "Have a project, opportunity, or question? I'd love to hear from you.",
     contactText:
       "Have an idea, project, opportunity, or simply want to connect? I'd love to hear from you.",
+    letsConnect: "Let's connect",
+    contactSideText:
+      "I'm open to discussing software development opportunities, interesting projects, collaborations, and technology.",
+    name: "Name",
+    email: "Email",
+    message: "Message",
+    namePlaceholder: "Your name",
+    emailPlaceholder: "you@example.com",
+    messagePlaceholder: "Tell me about your project or opportunity...",
+    sendMessage: "Send Message",
+    messageSuccess: "Thanks! Your message has been prepared successfully.",
+    messageError: "Please complete all fields before sending.",
     getInTouch: "Get In Touch",
 
     footerRights: "All rights reserved.",
@@ -96,6 +112,8 @@ const translations = {
 
     viewWork: "ስራዎቼን ይመልከቱ",
     downloadResume: "CV አውርድ",
+    viewResume: "CV ይመልከቱ",
+    resumeModalTitle: "ከቢምልስ ሀብታሙ — CV",
 
     github: "GitHub",
     linkedin: "LinkedIn",
@@ -149,9 +167,22 @@ const translations = {
 
     contactLabel: "ያግኙኝ",
     contactTitle: "አብረን ጥሩ ነገር እንገንባ።",
+    contactDescription:
+      "ፕሮጀክት፣ የስራ እድል ወይም ጥያቄ ካለዎት እንሰማዎታለን።",
     contactText:
       "ሀሳብ፣ ፕሮጀክት፣ የስራ እድል ካለዎት ወይም በቀላሉ መገናኘት ከፈለጉ እኔን ማግኘት ይችላሉ።",
-
+    letsConnect: "እንገናኝ",
+    contactSideText:
+      "ስለ software development የስራ እድሎች፣ ፕሮጀክቶች፣ collaborations እና technology ላይ ለመወያየት ዝግጁ ነኝ።",
+    name: "ስም",
+    email: "ኢሜይል",
+    message: "መልዕክት",
+    namePlaceholder: "ስምዎን ያስገቡ",
+    emailPlaceholder: "you@example.com",
+    messagePlaceholder: "ስለ ፕሮጀክትዎ ወይም የስራ እድሉ ይንገሩኝ...",
+    sendMessage: "መልዕክት ላክ",
+    messageSuccess: "እናመሰግናለን! መልዕክትዎ በትክክል ተዘጋጅቷል።",
+    messageError: "እባክዎ ከመላክዎ በፊት ሁሉንም መስኮች ይሙሉ።",
     getInTouch: "ያግኙኝ",
 
     footerRights: "መብቱ የተጠበቀ ነው።",

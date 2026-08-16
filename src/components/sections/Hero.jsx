@@ -1,21 +1,21 @@
 import { motion } from "framer-motion";
 import {
   ArrowDown,
-  BriefcaseBusiness,
-  Download,
-  GitBranch,
-  Send,
+  Eye,
 } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
+import { useState } from "react";
 
 import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
+import ResumeModal from "../common/ResumeModal";
+import { SocialRow } from "../common/SocialLinks";
 
 function Hero() {
   const { t, language } = useLanguage();
   const { theme } = useTheme();
-
   const isDark = theme === "dark";
+  const [resumeOpen, setResumeOpen] = useState(false);
 
   return (
     <section
@@ -196,67 +196,28 @@ function Hero() {
               />
             </motion.a>
 
-            <motion.a
+            <motion.button
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              href="/resume.pdf"
-              download
+              onClick={() => setResumeOpen(true)}
               className={`group flex items-center gap-2 rounded-full border px-7 py-3.5 font-semibold transition ${
                 isDark
                   ? "border-white/15 text-white hover:border-violet-500 hover:text-violet-400"
                   : "border-gray-300 text-gray-900 hover:border-violet-500 hover:text-violet-600"
               }`}
             >
-              <Download size={17} />
-
-              {t.downloadResume}
-            </motion.a>
+              <Eye size={17} />
+              {t.viewResume}
+            </motion.button>
 
           </div>
 
           {/* Social links */}
-          <div
-            className={`mt-10 flex items-center gap-4 ${
-              isDark
-                ? "text-gray-400"
-                : "text-gray-600"
-            }`}
-          >
-
-            <span className="mr-2 text-xs uppercase tracking-widest">
+          <div className="mt-10 flex items-center gap-4">
+            <span className={`mr-2 text-xs uppercase tracking-widest ${isDark ? "text-gray-400" : "text-gray-600"}`}>
               Connect
             </span>
-
-            <a
-              href="https://github.com/BimelsHabtamu"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-              className="rounded-full border border-current/10 p-2.5 transition hover:border-violet-500 hover:text-violet-500"
-            >
-              <GitBranch size={19} />
-            </a>
-
-            <a
-              href="#"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-              className="rounded-full border border-current/10 p-2.5 transition hover:border-violet-500 hover:text-violet-500"
-            >
-              <BriefcaseBusiness size={19} />
-            </a>
-
-            <a
-              href="#"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Telegram"
-              className="rounded-full border border-current/10 p-2.5 transition hover:border-violet-500 hover:text-violet-500"
-            >
-              <Send size={19} />
-            </a>
-
+            <SocialRow />
           </div>
 
         </motion.div>
@@ -426,6 +387,9 @@ function Hero() {
         <span>Scroll</span>
         <ArrowDown size={16} />
       </motion.a>
+
+      {/* Resume Modal */}
+      <ResumeModal isOpen={resumeOpen} onClose={() => setResumeOpen(false)} />
 
     </section>
   );

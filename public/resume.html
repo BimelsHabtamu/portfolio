@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bimels Habtamu — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --violet:     #7c3aed;
+      --violet-lt:  #a78bfa;
+      --violet-dim: #4c1d95;
+      --bg:         #08080c;
+      --surface:    #0f0f16;
+      --border:     rgba(255,255,255,0.08);
+      --text:       #f1f5f9;
+      --muted:      #94a3b8;
+      --faint:      #1e1e2e;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── LAYOUT ─────────────────────────────────────── */
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 56px 40px 80px;
+    }
+
+    /* ── HEADER ─────────────────────────────────────── */
+    .header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: start;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 48px;
+    }
+
+    .name {
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .name span { color: var(--violet-lt); }
+
+    .title-line {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--violet-lt);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 440px;
+      line-height: 1.7;
+    }
+
+    /* Contact block */
+    .contact {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end;
+    }
+
+    .contact a, .contact span {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .contact a:hover { color: var(--violet-lt); }
+
+    .contact-icon {
+      width: 16px;
+      height: 16px;
+      opacity: 0.6;
+    }
+
+    /* ── SECTION ─────────────────────────────────────── */
+    .section { margin-bottom: 44px; }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--violet-lt);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── TWO-COLUMN BODY ─────────────────────────────── */
+    .body-grid {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* ── EXPERIENCE / EDUCATION ITEMS ────────────────── */
+    .timeline { display: flex; flex-direction: column; gap: 28px; }
+
+    .item {
+      position: relative;
+      padding: 22px 24px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--surface);
+      transition: border-color 0.2s;
+    }
+
+    .item:hover { border-color: rgba(124,58,237,0.35); }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+
+    .item-title {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .item-period {
+      font-size: 0.75rem;
+      color: var(--muted);
+      white-space: nowrap;
+      background: var(--faint);
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+    }
+
+    .item-org {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--violet-lt);
+      margin-bottom: 10px;
+    }
+
+    .item-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ── PROJECTS ────────────────────────────────────── */
+    .projects { display: flex; flex-direction: column; gap: 20px; }
+
+    .project {
+      padding: 20px 22px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+      transition: border-color 0.2s;
+    }
+
+    .project:hover { border-color: rgba(124,58,237,0.35); }
+
+    .project-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .project-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(124,58,237,0.12);
+      border: 1px solid rgba(124,58,237,0.25);
+      color: var(--violet-lt);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SIDEBAR ─────────────────────────────────────── */
+    .sidebar { display: flex; flex-direction: column; gap: 36px; }
+
+    /* Skills */
+    .skill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--faint);
+      color: var(--text);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .skill:hover {
+      border-color: var(--violet-lt);
+      color: var(--violet-lt);
+    }
+
+    /* Certs list */
+    .cert-list { display: flex; flex-direction: column; gap: 12px; }
+
+    .cert-item {
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .cert-name {
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 3px;
+      line-height: 1.4;
+    }
+
+    .cert-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* Languages */
+    .lang-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+
+    .lang-level {
+      font-size: 0.75rem;
+      color: var(--violet-lt);
+      font-weight: 600;
+      background: rgba(124,58,237,0.1);
+      padding: 2px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(124,58,237,0.2);
+    }
+
+    /* ── PRINT BUTTON ────────────────────────────────── */
+    .print-bar {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      display: flex;
+      gap: 10px;
+      z-index: 50;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      gap-7px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      font-family: inherit;
+      gap: 7px;
+    }
+
+    .btn-primary {
+      background: var(--violet);
+      color: #fff;
+    }
+
+    .btn-primary:hover { background: #6d28d9; }
+
+    .btn-ghost {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover { border-color: var(--violet-lt); color: var(--violet-lt); }
+
+    /* ── PRINT STYLES ────────────────────────────────── */
+    @media print {
+      body { background: #fff; color: #111; }
+      :root {
+        --bg: #fff;
+        --surface: #f8f8fc;
+        --border: #e2e8f0;
+        --text: #111827;
+        --muted: #6b7280;
+        --faint: #f1f5f9;
+        --violet-lt: #7c3aed;
+      }
+      .print-bar { display: none; }
+      .page { padding: 20px 24px; }
+      .item, .project, .cert-item { break-inside: avoid; }
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 700px) {
+      .page { padding: 32px 20px 60px; }
+      .header { grid-template-columns: 1fr; }
+      .contact { align-items: flex-start; }
+      .body-grid { grid-template-columns: 1fr; }
+      .name { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ════════════════════════════════════════
+       HEADER
+  ═════════════════════════════════════════ -->
+  <header class="header">
+    <div>
+      <h1 class="name">Bimels <span>Habtamu</span></h1>
+      <p class="title-line">Full Stack Developer</p>
+      <p class="tagline">
+        I build modern web applications, intelligent digital experiences,
+        and practical solutions that turn ideas into real products.
+      </p>
+    </div>
+
+    <div class="contact">
+      <a href="https://github.com/BimelsHabtamu" target="_blank" rel="noreferrer">
+        <!-- GitHub icon -->
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+        </svg>
+        github.com/BimelsHabtamu
+      </a>
+
+      <a href="https://linkedin.com/in/bimelshabtamu" target="_blank" rel="noreferrer">
+        <!-- LinkedIn icon -->
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+        linkedin.com/in/bimelshabtamu
+      </a>
+
+      <span>
+        <!-- Location icon -->
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          <circle cx="12" cy="9" r="2.5"/>
+        </svg>
+        Addis Ababa, Ethiopia
+      </span>
+
+      <a href="https://github.com/BimelsHabtamu/portfolio" target="_blank" rel="noreferrer">
+        <!-- Globe icon -->
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+        </svg>
+        Portfolio
+      </a>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════
+       BODY
+  ═════════════════════════════════════════ -->
+  <div class="body-grid">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <!-- Experience -->
+      <div class="section">
+        <p class="section-label">Experience</p>
+        <div class="timeline">
+
+          <div class="item">
+            <div class="item-header">
+              <span class="item-title">Full Stack Developer</span>
+              <span class="item-period">2025 — Present</span>
+            </div>
+            <p class="item-org">Independent Projects</p>
+            <p class="item-desc">
+              Building full-stack applications using modern frontend and backend
+              technologies, with a focus on useful real-world solutions. Working
+              with React, Laravel, PHP, REST APIs, and MySQL.
+            </p>
+          </div>
+
+          <div class="item">
+            <div class="item-header">
+              <span class="item-title">Laravel & React Developer</span>
+              <span class="item-period">2025 — Present</span>
+            </div>
+            <p class="item-org">Personal & Academic Projects</p>
+            <p class="item-desc">
+              Developing web applications with Laravel, PHP, React, JavaScript,
+              databases, REST APIs, and modern UI technologies including
+              Tailwind CSS and Framer Motion.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="section">
+        <p class="section-label">Education</p>
+        <div class="timeline">
+
+          <div class="item">
+            <div class="item-header">
+              <span class="item-title">BSc Computer Science</span>
+              <span class="item-period">2022 — Present</span>
+            </div>
+            <p class="item-org">University — Addis Ababa, Ethiopia</p>
+            <p class="item-desc">
+              Studying software engineering, algorithms, data structures,
+              databases, and modern web development technologies.
+            </p>
+          </div>
+
+          <div class="item">
+            <div class="item-header">
+              <span class="item-title">Android Fundamentals</span>
+              <span class="item-period">Mar 2026</span>
+            </div>
+            <p class="item-org">Udacity — Global Chapters Ethiopia (Accenture)</p>
+            <p class="item-desc">
+              Completed the Global Chapters Ethiopia program covering
+              Android development fundamentals through Udacity.
+            </p>
+          </div>
+
+          <div class="item">
+            <div class="item-header">
+              <span class="item-title">Programming Fundamentals</span>
+              <span class="item-period">Mar 2026</span>
+            </div>
+            <p class="item-org">Udacity — Global Chapters Ethiopia (Accenture)</p>
+            <p class="item-desc">
+              Completed the verified programming fundamentals certification
+              through the Global Chapters Ethiopia initiative.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="section">
+        <p class="section-label">Projects</p>
+        <div class="projects">
+
+          <div class="project">
+            <p class="project-title">Skill Match Job Recommender</p>
+            <p class="project-desc">
+              A job recommendation system that analyzes resumes, identifies skills,
+              detects gaps, and helps users discover relevant opportunities using AI.
+            </p>
+            <div class="tech-tags">
+              <span class="tag">Laravel</span>
+              <span class="tag">Vue.js</span>
+              <span class="tag">AI</span>
+              <span class="tag">MySQL</span>
+            </div>
+          </div>
+
+          <div class="project">
+            <p class="project-title">QR Attendance System</p>
+            <p class="project-desc">
+              A digital attendance management solution designed to simplify
+              student attendance tracking and reporting using QR codes.
+            </p>
+            <div class="tech-tags">
+              <span class="tag">Java</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">QR API</span>
+            </div>
+          </div>
+
+          <div class="project">
+            <p class="project-title">Digital Notice Board</p>
+            <p class="project-desc">
+              A modern platform for publishing and managing university
+              announcements digitally — replacing physical notice boards.
+            </p>
+            <div class="tech-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">Dart</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- Skills -->
+      <div class="section" style="margin-bottom:0">
+        <p class="section-label">Skills</p>
+        <div class="skill-grid">
+          <span class="skill">React</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">TypeScript</span>
+          <span class="skill">Laravel</span>
+          <span class="skill">PHP</span>
+          <span class="skill">MySQL</span>
+          <span class="skill">REST APIs</span>
+          <span class="skill">Git</span>
+          <span class="skill">Tailwind CSS</span>
+          <span class="skill">Flutter</span>
+          <span class="skill">Python</span>
+          <span class="skill">Java</span>
+          <span class="skill">Firebase</span>
+          <span class="skill">Linux</span>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="section" style="margin-bottom:0">
+        <p class="section-label">Certifications</p>
+        <div class="cert-list">
+
+          <div class="cert-item">
+            <p class="cert-name">Front-End Development Libraries V8</p>
+            <p class="cert-meta">freeCodeCamp · Mar 2026</p>
+          </div>
+
+          <div class="cert-item">
+            <p class="cert-name">Data Analytics & Visualization — Python</p>
+            <p class="cert-meta">INFNOVA Technologies · Jul 2026</p>
+          </div>
+
+          <div class="cert-item">
+            <p class="cert-name">Intro to Python for Developers</p>
+            <p class="cert-meta">DataCamp · Aug 2026</p>
+          </div>
+
+          <div class="cert-item">
+            <p class="cert-name">Generative AI Literacy</p>
+            <p class="cert-meta">Simplilearn SkillUp · Aug 2026</p>
+          </div>
+
+          <div class="cert-item">
+            <p class="cert-name">Ambassador — The Udara Project</p>
+            <p class="cert-meta">AI Education · Jun 2026</p>
+          </div>
+
+          <div class="cert-item">
+            <p class="cert-name">IDEEZA Builders Challenge</p>
+            <p class="cert-meta">AI-Assisted Hardware · May 2026</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="section" style="margin-bottom:0">
+        <p class="section-label">Languages</p>
+        <div class="lang-list">
+          <div class="lang-item">
+            <span>English</span>
+            <span class="lang-level">Professional</span>
+          </div>
+          <div class="lang-item">
+            <span>Amharic</span>
+            <span class="lang-level">Native</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- end body-grid -->
+</div><!-- end page -->
+
+<!-- ════════════════════════════════════════
+     PRINT / DOWNLOAD BAR
+═════════════════════════════════════════ -->
+<div class="print-bar">
+  <button class="btn btn-ghost" onclick="window.print()">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/>
+      <rect x="6" y="14" width="12" height="8"/>
+    </svg>
+    Print
+  </button>
+  <a class="btn btn-primary" href="/resume.html" download="Bimels-Habtamu-Resume.html">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+      <polyline points="7 10 12 15 17 10"/>
+      <line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>
+    Download
+  </a>
+</div>
+
+</body>
+</html>
