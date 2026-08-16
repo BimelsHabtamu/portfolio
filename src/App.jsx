@@ -1,5 +1,6 @@
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import ChatBot from "./components/common/ChatBot";
 
 import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
@@ -33,6 +34,9 @@ function App() {
       </main>
 
       <Footer />
+
+      {/* AI Chatbot — floating bottom-right */}
+      <ChatBot />
     </div>
   );
 }

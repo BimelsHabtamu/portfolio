@@ -200,6 +200,7 @@ function Hero() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => setResumeOpen(true)}
+              aria-label="View resume"
               className={`group flex items-center gap-2 rounded-full border px-7 py-3.5 font-semibold transition ${
                 isDark
                   ? "border-white/15 text-white hover:border-violet-500 hover:text-violet-400"
@@ -280,8 +281,9 @@ function Hero() {
 
             <img
               src="/images/profile.png"
-              alt="Bimels Habtamu"
+              alt="Bimels Habtamu — Full Stack Developer"
               className="h-full w-full object-cover"
+              loading="eager"
               onError={(event) => {
                 event.currentTarget.style.display = "none";
               }}

@@ -24,8 +24,8 @@ function Navbar() {
   };
 
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-black/40 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+    <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-black/40 backdrop-blur-xl">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5" aria-label="Main navigation">
 
         {/* Logo */}
         <a
@@ -67,6 +67,7 @@ function Navbar() {
 
             <button
               onClick={() => changeLanguage("am")}
+              aria-label="Switch language to Amharic"
               className={`px-3 py-1.5 text-xs font-semibold transition ${
                 language === "am"
                   ? "bg-violet-600 text-white"
@@ -81,7 +82,7 @@ function Navbar() {
           <button
             onClick={toggleTheme}
             className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 transition hover:border-violet-500"
-            aria-label="Toggle theme"
+            aria-label="Toggle dark and light theme"
           >
             {theme === "dark" ? (
               <Sun size={17} />
@@ -96,12 +97,12 @@ function Navbar() {
         <button
           onClick={() => setMobileMenu(!mobileMenu)}
           className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 md:hidden"
-          aria-label="Toggle navigation"
+          aria-label={mobileMenu ? "Close navigation menu" : "Open navigation menu"}
         >
           {mobileMenu ? <X size={20} /> : <Menu size={20} />}
         </button>
 
-      </div>
+      </nav>
 
       {/* Mobile Menu */}
       {mobileMenu && (
@@ -124,6 +125,7 @@ function Navbar() {
 
               <button
                 onClick={() => changeLanguage("en")}
+                aria-label="Switch language to English"
                 className={`rounded-full border px-4 py-2 text-xs font-semibold ${
                   language === "en"
                     ? "border-violet-500 text-violet-400"
@@ -135,6 +137,7 @@ function Navbar() {
 
               <button
                 onClick={() => changeLanguage("am")}
+                aria-label="Switch language to Amharic"
                 className={`rounded-full border px-4 py-2 text-xs font-semibold ${
                   language === "am"
                     ? "border-violet-500 text-violet-400"
@@ -146,6 +149,7 @@ function Navbar() {
 
               <button
                 onClick={toggleTheme}
+                aria-label="Toggle dark and light theme"
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10"
               >
                 {theme === "dark" ? (
@@ -161,7 +165,7 @@ function Navbar() {
 
         </div>
       )}
-    </nav>
+    </header>
   );
 }
 
