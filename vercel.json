@@ -1,5 +1,11 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "framework": "vite"
+  "framework": "vite",
+  "functions": {
+    "api/chat.js": {
+      "memory": 512,
+      "maxDuration": 30
+    }
+  }
 }
