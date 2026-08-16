@@ -96,76 +96,49 @@ function Hero() {
             className="mb-6 flex items-center gap-3"
           >
             <span className="h-px w-10 bg-violet-500" />
-
             <span className="text-sm font-semibold uppercase tracking-[0.25em] text-violet-500">
-              {t.hello}
+              Welcome
             </span>
           </motion.div>
 
           {/* Main heading */}
-          <h1 className="max-w-4xl text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-
-            <span
-              className={
-                isDark
-                  ? "text-white"
-                  : "text-gray-900"
-              }
-            >
-              I build
+          <h1 className="max-w-4xl text-5xl font-black leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl">
+            <span className={isDark ? "text-white" : "text-gray-900"}>
+              Hello, I'm{" "}
             </span>
-
-            <br />
-
-            <span className="bg-gradient-to-r from-violet-500 via-purple-500 to-fuchsia-500 bg-clip-text text-transparent">
-              digital experiences.
+            <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">
+              Bimels Habtamu
             </span>
-
           </h1>
 
-          {/* Typing role */}
+          {/* Typing role — only two roles */}
           <div
             className={`mt-7 flex min-h-[38px] items-center text-xl font-semibold sm:text-2xl ${
-              isDark
-                ? "text-gray-300"
-                : "text-gray-700"
+              isDark ? "text-gray-300" : "text-gray-700"
             }`}
           >
-
-            <span className="mr-2 text-violet-500">
-              —
-            </span>
-
+            <span className="mr-2 text-violet-500">—</span>
             <TypeAnimation
               key={language}
               sequence={
                 language === "en"
                   ? [
+                      "Information Technology Student",
+                      2500,
                       "Full Stack Developer",
-                      2000,
-                      "React Developer",
-                      2000,
-                      "Laravel Developer",
-                      2000,
-                      "AI Enthusiast",
-                      2000,
+                      2500,
                     ]
                   : [
+                      "የኢንፎርሜሽን ቴክኖሎጂ ተማሪ",
+                      2500,
                       "Full Stack Developer",
-                      2000,
-                      "React Developer",
-                      2000,
-                      "Laravel Developer",
-                      2000,
-                      "AI ቴክኖሎጂ አድናቂ",
-                      2000,
+                      2500,
                     ]
               }
               wrapper="span"
               speed={50}
               repeat={Infinity}
             />
-
           </div>
 
           {/* Description */}
