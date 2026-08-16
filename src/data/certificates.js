@@ -1,15 +1,10 @@
-/**
- * Certificate images go in: public/images/certificates/
- * Reference them as:        /images/certificates/filename.jpg
- */
-
 const certificates = [
   {
     id: 1,
     title:  { en: "Certificate of Appreciation — Ambassador", am: "የምስጋና ሰርተፊኬት — አምባሳደር" },
     issuer: { en: "The Udara Project", am: "The Udara Project" },
     date:   { en: "June 30, 2026", am: "ሰኔ 30, 2026" },
-    image:  "/images/certificates/udara-appreciation.jpg",
+    image:  "/images/certificates/udara-appreciation.png",
   },
   {
     id: 2,
@@ -30,7 +25,7 @@ const certificates = [
     title:  { en: "Front-End Development Libraries V8", am: "Front-End Development Libraries V8" },
     issuer: { en: "freeCodeCamp", am: "freeCodeCamp" },
     date:   { en: "March 24, 2026", am: "መጋቢት 24, 2026" },
-    image:  "/images/certificates/freecodecamp-frontend.jpg",
+    image:  "/images/certificates/freecodecamp-frontend.png",
   },
   {
     id: 5,
@@ -44,7 +39,7 @@ const certificates = [
     title:  { en: "Global Chapters – Ethiopia – Programming Fundamentals", am: "Global Chapters – Ethiopia – Programming Fundamentals" },
     issuer: { en: "Udacity / Accenture", am: "Udacity / Accenture" },
     date:   { en: "March 21, 2026", am: "መጋቢት 21, 2026" },
-    image:  "/images/certificates/udacity-programming.jpg",
+    image:  "/images/certificates/udacity-programming.png",
   },
   {
     id: 7,
@@ -65,28 +60,28 @@ const certificates = [
     title:  { en: "Certificate of Attendance — AI in Education: Why Mindset Unlocks Its True Power", am: "የተሳትፎ ሰርተፊኬት — AI in Education" },
     issuer: { en: "The Udara Project", am: "The Udara Project" },
     date:   { en: "July 15, 2026", am: "ሐምሌ 15, 2026" },
-    image:  "/images/certificates/udara-ai-education.jpg",
+    image:  "/images/certificates/udara-ai-education.png",
   },
   {
     id: 10,
     title:  { en: "Certificate of Attendance — Modeling Day Data to Insight. Bias Detection & Evaluation", am: "የተሳትፎ ሰርተፊኬት — Bias Detection & Evaluation" },
     issuer: { en: "The Udara Project / NSK Ai", am: "The Udara Project / NSK Ai" },
     date:   { en: "July 15, 2026", am: "ሐምሌ 15, 2026" },
-    image:  "/images/certificates/udara-bias-detection.jpg",
+    image:  "/images/certificates/udara-bias-detection.png",
   },
   {
     id: 11,
     title:  { en: "Certificate of Attendance — Vibe Coding in Production", am: "የተሳትፎ ሰርተፊኬት — Vibe Coding in Production" },
     issuer: { en: "The Udara Project / NSK Ai", am: "The Udara Project / NSK Ai" },
     date:   { en: "July 15, 2026", am: "ሐምሌ 15, 2026" },
-    image:  "/images/certificates/udara-vibe-coding.jpg",
+    image:  "/images/certificates/udara-vibe-coding.png",
   },
   {
     id: 12,
     title:  { en: "Certificate of Completion — The Udara Project (5 Days Workshop, 100%)", am: "የማጠናቀቂያ ሰርተፊኬት — The Udara Project" },
     issuer: { en: "The Udara Project / NSK Ai", am: "The Udara Project / NSK Ai" },
     date:   { en: "July 15, 2026", am: "ሐምሌ 15, 2026" },
-    image:  "/images/certificates/udara-completion.jpg",
+    image:  "/images/certificates/udara-completion.png",
   },
 ];
 

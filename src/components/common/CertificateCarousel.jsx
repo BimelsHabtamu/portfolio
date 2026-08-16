@@ -93,15 +93,13 @@ function CertificateCarousel() {
           >
             {/* Certificate image */}
             {cert.image ? (
-              <div className="relative overflow-hidden rounded-xl">
+              <div className="rounded-xl overflow-hidden flex items-center justify-center bg-white">
                 <img
                   src={cert.image}
                   alt={cert.title[language]}
-                  className="h-56 w-full object-cover sm:h-72"
+                  className="w-full h-auto max-h-[480px] object-contain"
                   loading="lazy"
                 />
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
             ) : (
               /* Placeholder if image not set yet */
