@@ -189,8 +189,9 @@ function ChatBot() {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.2 }}
+              className="text-2xl leading-none"
             >
-              <Bot size={22} />
+              🤖
             </motion.span>
           )}
         </AnimatePresence>
@@ -222,8 +223,8 @@ function ChatBot() {
             {/* Header */}
             <div className="flex shrink-0 items-center justify-between border-b border-violet-500/20 bg-violet-600/10 px-5 py-4">
               <div className="flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-violet-600">
-                  <Bot size={18} className="text-white" />
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-violet-600 text-xl">
+                  🤖
                 </span>
                 <div>
                   <p className="text-sm font-bold">Bimels' AI Assistant</p>
@@ -348,7 +349,7 @@ function ChatBot() {
                 </button>
               </div>
               <p className={`mt-2 text-center text-[10px] ${isDark ? "text-gray-600" : "text-gray-400"}`}>
-                Powered by Google Gemini
+                Powered by Groq · Llama 3.3
               </p>
             </div>
           </motion.div>
