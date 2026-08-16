@@ -1,0 +1,129 @@
+.auto-skills {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: #111827;
+}
+
+.auto-skills__label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #8b5cf6;
+}
+
+.auto-skills__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8b5cf6, #22d3ee);
+  box-shadow: 0 0 0 6px rgba(139, 92, 246, 0.14);
+  animation: autoSkillPulse 2.2s ease-in-out infinite;
+}
+
+.auto-skills__window {
+  position: relative;
+  overflow: hidden;
+  height: 78px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.auto-skills__track {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  animation: skillSlide 18s linear infinite;
+  will-change: transform;
+}
+
+.auto-skills__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 78px;
+  padding: 0 22px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #111827;
+}
+
+.auto-skills__number {
+  min-width: 2.5rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: #8b5cf6;
+}
+
+.dark .auto-skills {
+  color: #f8fafc;
+}
+
+.dark .auto-skills__label {
+  color: #a78bfa;
+}
+
+.dark .auto-skills__window {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.4);
+}
+
+.dark .auto-skills__item {
+  color: #f8fafc;
+}
+
+@keyframes skillSlide {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes autoSkillPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 0.7;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auto-skills__track,
+  .auto-skills__dot {
+    animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .auto-skills {
+    max-width: 100%;
+  }
+
+  .auto-skills__window {
+    height: 66px;
+  }
+
+  .auto-skills__item {
+    height: 66px;
+    padding: 0 18px;
+    font-size: 1.05rem;
+  }
+}
