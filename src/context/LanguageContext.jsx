@@ -41,6 +41,14 @@ const translations = {
     skillsLabel: "Skills",
     skillsTitle: "Technologies I work with.",
 
+    experienceLabel: "My Journey",
+    experienceTitle: "Education, experience & growth.",
+    experienceDescription:
+      "A timeline of my academic journey, development experience, and continuous learning.",
+    education: "Education",
+    experience: "Experience",
+    certification: "Certification",
+
     projectsLabel: "Selected Work",
     projectsTitle: "Projects I'm proud of.",
 
@@ -109,6 +117,14 @@ const translations = {
 
     skillsLabel: "ክህሎቶች",
     skillsTitle: "የምጠቀምባቸው ቴክኖሎጂዎች።",
+
+    experienceLabel: "የእኔ ጉዞ",
+    experienceTitle: "ትምህርት፣ ልምድ እና እድገት።",
+    experienceDescription:
+      "የትምህርት ጉዞዬን፣ የdevelopment ልምዴን እና ቀጣይነት ያለውን የመማር ሂደቴን የሚያሳይ timeline።",
+    education: "ትምህርት",
+    experience: "የስራ ልምድ",
+    certification: "ሰርተፊኬት",
 
     projectsLabel: "የተመረጡ ስራዎች",
     projectsTitle: "የምኮራባቸው ፕሮጀክቶች።",

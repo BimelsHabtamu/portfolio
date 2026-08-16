@@ -14,8 +14,8 @@ function Navbar() {
     { label: t.home, href: "#home" },
     { label: t.about, href: "#about" },
     { label: t.skills, href: "#skills" },
+    { label: t.experience, href: "#experience" },
     { label: t.projects, href: "#projects" },
-    { label: t.blog, href: "#blog" },
     { label: t.contact, href: "#contact" },
   ];
 
