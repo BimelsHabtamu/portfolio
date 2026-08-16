@@ -88,61 +88,23 @@ function About() {
                   : "border-gray-200 bg-gray-50"
               }`}
             >
-
-              {/* Decorative grid */}
-              <div
-                className="absolute inset-0 opacity-[0.06]"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(rgba(139,92,246,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.8) 1px, transparent 1px)",
-                  backgroundSize: "40px 40px",
-                }}
+              {/* About image */}
+              <img
+                src="/images/about.png"
+                alt="Bimels Habtamu"
+                className="h-full w-full object-cover"
               />
 
-              {/* Center graphic */}
-              <div className="absolute inset-0 flex items-center justify-center">
-
-                <motion.div
-                  animate={{
-                    rotate: 360,
-                  }}
-                  transition={{
-                    duration: 25,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  className="absolute h-64 w-64 rounded-full border border-dashed border-violet-500/30"
-                />
-
-                <motion.div
-                  animate={{
-                    scale: [1, 1.05, 1],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="relative flex h-44 w-44 items-center justify-center rounded-[32px] bg-gradient-to-br from-violet-600 to-fuchsia-600 shadow-2xl shadow-violet-600/30"
-                >
-                  <span className="text-7xl font-black text-white">
-                    B.
-                  </span>
-                </motion.div>
-
-              </div>
+              {/* Gradient overlay at bottom */}
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent" />
 
               {/* Floating labels */}
-
               <motion.div
                 animate={{ y: [0, -8, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                }}
+                transition={{ duration: 4, repeat: Infinity }}
                 className={`absolute left-5 top-8 rounded-2xl border px-4 py-3 text-sm font-semibold backdrop-blur-xl ${
                   isDark
-                    ? "border-white/10 bg-black/40"
+                    ? "border-white/10 bg-black/50"
                     : "border-gray-200 bg-white/80"
                 }`}
               >
@@ -151,19 +113,15 @@ function About() {
 
               <motion.div
                 animate={{ y: [0, 8, 0] }}
-                transition={{
-                  duration: 4.5,
-                  repeat: Infinity,
-                }}
+                transition={{ duration: 4.5, repeat: Infinity }}
                 className={`absolute bottom-8 right-5 rounded-2xl border px-4 py-3 text-sm font-semibold backdrop-blur-xl ${
                   isDark
-                    ? "border-white/10 bg-black/40"
+                    ? "border-white/10 bg-black/50"
                     : "border-gray-200 bg-white/80"
                 }`}
               >
-                AI
+                Full Stack
               </motion.div>
-
             </div>
 
           </motion.div>
